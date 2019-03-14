@@ -1,0 +1,15 @@
+
+LinkedListNode* reverse(LinkedListNode *head)
+{
+    LinkedListNode *p=head,*q=head,*x;
+    while(q)
+    {
+        p=q;
+        x=q;
+        q=q->next;
+        LinkedListNode *temp=p->next;
+        p->next=p->prev;
+        p->prev=temp;
+    }
+    return x;
+}
